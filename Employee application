@@ -1,0 +1,100 @@
+import java.util.*;
+class fetch
+{
+	
+	String name;
+	int age,salary,id,i,n;
+
+	static Scanner fet=new Scanner(System.in);
+
+	void record()
+	{
+		System.out.println("Enter name:");
+		name=fet.next();
+
+		System.out.println("Enter Age:");
+		age=fet.nextInt();	
+
+		System.out.println("Enter no.of employees:"+n);
+		n=fet.nextInt();
+
+		for(i=1;i<=n;i++)
+		{
+			System.out.println("Id:"+id);
+		}
+
+	}	
+
+	void Designation()
+	{
+		System.out.println("Enter salary:");
+		salary=fet.nextInt();
+
+		if(salary <= 15000)
+		{
+			System.out.println("Designation is clerk");	
+		}
+		else if(salary >=15000   &&    salary <=30000)
+		{
+			System.out.println("Designation is Programmer");	
+		}
+		else
+		{
+			System.out.println("Designation is Manager");
+		}
+	}
+
+	void Display()
+	{
+		System.out.println("Name of the employee:"+name);	
+		System.out.println("Age of the employee:"+age);	
+		System.out.println("salary of the employee:"+salary);	
+		System.out.println("Id of the employee:"+id);
+	}
+
+	
+}
+
+class employee
+{
+	public static void main(String args[])
+	{
+		Scanner meu=new Scanner(System.in);
+		fetch fth=new fetch();
+		int menu;
+		
+		boolean quit=false;
+
+		do
+		{
+			System.out.println("Menu:");
+		    System.out.println("1.Create record");
+		    System.out.println("2.Display Designation");
+		    System.out.println("3.Display record");
+		    System.out.println("4.Exit");
+
+		
+		    System.out.println("Welcome!Pls enter your choice");
+
+			menu=meu.nextInt();
+			switch(menu)
+			{
+				case 1:
+				fth.record();
+				break;
+
+				case 2:
+				fth.Designation();
+				break;
+
+				case 3:
+		        fth.Display();
+				break;
+
+				case 4:
+				quit=true;
+				break; 
+			}
+		}while (!quit);
+	}
+}
